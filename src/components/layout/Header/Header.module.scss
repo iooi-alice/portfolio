@@ -1,0 +1,95 @@
+.header {
+  @include flexbox(between);
+
+  position: fixed;
+  z-index: 10;
+  top: 3.2rem;
+  left: 50%;
+  transform-origin: center center;
+  transform: translateX(-50%);
+
+  width: 80rem;
+  padding: 1.2rem;
+
+  background: $opacity-black-70;
+  backdrop-filter: blur(30px);
+  border: $header-border;
+  border-radius: 24px;
+
+  animation: header-slide-down 1s;
+
+  &-nav {
+    @include flexbox(between, center, 1.6rem);
+
+    width: 100%;
+
+    .nav-logo {
+      padding-left: 4rem;
+    }
+
+    .nav-indicator {
+      @include text-style(18, $white, bold);
+
+      .emoji {
+        display: inline-block;
+        margin-right: 0.8rem;
+        animation: shaking-hand 2s infinite;
+      }
+    }
+  }
+}
+
+.btn-contact {
+  position: relative;
+
+  overflow: hidden;
+  flex-shrink: 0;
+
+  width: 12rem;
+  height: 5.6rem;
+
+  border: 0.1rem solid $opacity-white-60;
+  border-radius: 1.2rem;
+
+  transition: $base-transition;
+
+  &:hover {
+    border-color: $white;
+  }
+
+  &-text {
+    @include text-style(16, $white, bold);
+  }
+
+  @include inline-flexbox;
+}
+
+@keyframes shaking-hand {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(25deg);
+  }
+
+  50% {
+    transform: rotate(-15deg);
+  }
+
+  75% {
+    transform: rotate(15deg);
+  }
+}
+
+@keyframes header-slide-down {
+  0% {
+    opacity: 0;
+  }
+
+  30% {
+    transform: translate3d(-50%, -100%, 0);
+    opacity: 0;
+  }
+}
