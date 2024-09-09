@@ -1,7 +1,36 @@
 $white: #f5f5f5;
 $black: #000;
-$gray8: #888;
+$blue90: #406aff;
+$blue10: #bbceff;
+$green90: #08171a;
+$green10: #879a9b;
+$gray90: #161b25;
+$gray80: #888;
+$gray40: #444;
+$gray10: #828ea6;
+
+// border
 $header-border: 0.2rem solid rgb(144 144 144 / 16%);
 $box-border: 0.1rem solid rgb(144 144 144 / 16%);
+
+// opacity
 $opacity-black-70: rgb(0 0 0 / 70%);
 $opacity-white-60: rgb(255 255 255 / 60%);
+$opacity-white-5: rgb(255 255 255 / 5%);
+
+// gradient
+$work-grdient-blue: linear-gradient(
+  180deg,
+  rgb(41 91 238 / 0%) 0%,
+  #1a49ed 100%
+);
+$work-grdient-green: linear-gradient(
+  180deg,
+  rgb(8 23 26 / 0%) 0%,
+  #00282c 100%
+);
+$work-grdient-gray: linear-gradient(
+  180deg,
+  rgb(22 27 37 / 0%) 0%,
+  #0a111f 100%
+);
