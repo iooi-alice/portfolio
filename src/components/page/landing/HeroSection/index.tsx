@@ -7,16 +7,16 @@ import classNames from 'classnames/bind'
 import { SVGS } from '@/constants/images'
 import useScroller from '@/hooks/useScroller'
 
-import styles from './IntroSection.module.scss'
+import styles from './HeroSection.module.scss'
 
 const cx = classNames.bind(styles)
 const { pacman } = SVGS
 
-interface IntroSectionProps {
+interface HeroSectionProps {
   setTitle: Dispatch<SetStateAction<string>>
 }
 
-const IntroSection = ({ setTitle }: IntroSectionProps) => {
+const HeroSection = ({ setTitle }: HeroSectionProps) => {
   const trigger = useScroller(cx('is-motion'))
 
   useEffect(() => {
@@ -36,7 +36,7 @@ const IntroSection = ({ setTitle }: IntroSectionProps) => {
           <p>
             <span>Hi ther</span>
             <span className={cx('pacman')}>
-              <Image src={pacman.url} alt={pacman.alt} />
+              <Image src={pacman.url} alt={pacman.alt} width={52} height={56} />
             </span>
           </p>
         </div>
@@ -79,4 +79,4 @@ const IntroSection = ({ setTitle }: IntroSectionProps) => {
   )
 }
 
-export default IntroSection
+export default HeroSection
