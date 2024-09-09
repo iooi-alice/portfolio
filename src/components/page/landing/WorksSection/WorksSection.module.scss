@@ -1,0 +1,174 @@
+%gradient-background-base {
+  content: '';
+
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  height: 13.4rem;
+}
+
+.section-works {
+  overflow: hidden;
+
+  &-inner {
+    @include flexbox(start, start);
+  }
+
+  .works-cover {
+    position: relative;
+
+    flex-shrink: 0;
+
+    width: 45vw;
+    height: 100vh;
+    padding: 12rem 0 0 8rem;
+
+    &-intro {
+      &-title {
+        @include text-style(80);
+      }
+
+      &-desc {
+        @include text-style(16);
+
+        width: 60rem;
+      }
+    }
+
+    &-arrowbox {
+      position: relative;
+
+      width: 16rem;
+      height: 16rem;
+      margin-top: 38rem;
+
+      border-radius: 50%;
+
+      .spin {
+        @include pos-center;
+
+        animation: spin 10s linear infinite;
+      }
+
+      .arrow-up {
+        @include pos-center;
+
+        transform: translate(-50%, -50%) rotate(90deg);
+      }
+    }
+  }
+
+  .works-list {
+    @include flexbox(start, center, $gap: 4rem);
+
+    width: 200vw;
+    height: 100vh;
+    margin-top: 8.8rem;
+  }
+
+  .works-item {
+    @include flexbox;
+
+    height: 100vh;
+  }
+
+  .work-card {
+    position: relative;
+
+    overflow: hidden;
+
+    width: 96rem;
+    height: 50.8rem;
+    padding: 4.8rem;
+
+    border-radius: 3.6rem;
+
+    &-inner {
+      width: 100%;
+      height: 100%;
+
+      &::after {
+        @include text-style(56, $opacity-white-5, bold);
+
+        content: 'UXUI';
+
+        position: absolute;
+        z-index: 2;
+        bottom: 4rem;
+        left: 4.8rem;
+
+        font-weight: 900;
+      }
+    }
+
+    &-textbox {
+      .textbox-title {
+        @include text-style(24, $white, bold);
+
+        margin-bottom: 1.6rem;
+      }
+    }
+
+    &-imgbox {
+      position: absolute;
+      right: -0.4rem;
+      bottom: 0;
+    }
+
+    &.work-01 {
+      background-color: $blue90;
+
+      .work-card-inner::before {
+        @extend %gradient-background-base;
+
+        background: $work-grdient-blue;
+      }
+
+      .textbox-description {
+        @include text-style(18, $blue10);
+      }
+    }
+
+    &.work-02 {
+      background-color: $green90;
+
+      .work-card-inner::before {
+        @extend %gradient-background-base;
+
+        background: $work-grdient-green;
+      }
+
+      .textbox-description {
+        @include text-style(18, $green10);
+      }
+    }
+
+    &.work-03 {
+      background-color: $gray90;
+
+      .work-card-inner::before {
+        @extend %gradient-background-base;
+
+        background: $work-grdient-gray;
+      }
+
+      .textbox-description {
+        @include text-style(18, $gray10);
+      }
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
