@@ -1,6 +1,6 @@
 import Head from 'next/head'
 
-import LandingContent from '@/components/page/Landing'
+import LandingContent from '@/components/page/landing/LandingContent'
 
 export default function Home() {
   return (
