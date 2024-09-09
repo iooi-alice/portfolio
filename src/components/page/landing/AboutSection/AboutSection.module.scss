@@ -1,0 +1,153 @@
+.section-about {
+  @include flexbox;
+
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 100vh;
+
+  .expertise-list {
+    display: inline-block;
+    width: 58%;
+    text-align: center;
+  }
+
+  .expertise-item {
+    .btn-menu {
+      position: relative;
+
+      &-text {
+        @include text-style(80, $gray40, bold);
+
+        position: relative;
+        line-height: 1.2;
+      }
+
+      &-text::before {
+        content: attr(data-menu);
+
+        position: absolute;
+
+        overflow: hidden;
+
+        width: 0;
+        height: 100%;
+
+        color: $white;
+        white-space: nowrap;
+      }
+
+      &.is-active {
+        .btn-menu-text::before {
+          animation: text-full 1s linear forwards;
+        }
+      }
+    }
+  }
+
+  &.is-motion {
+    .expertise-list {
+      animation: fade-in-left 1s linear;
+    }
+
+    .description-list {
+      animation: fade-in-right 1.8s linear;
+    }
+  }
+}
+
+@keyframes fade-in-left {
+  0% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+
+  30% {
+    transform: translateX(-50px);
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in-right {
+  0% {
+    transform: translateX(30px);
+    opacity: 0;
+  }
+
+  30% {
+    transform: translateX(30px);
+    opacity: 0;
+  }
+}
+
+@keyframes text-full {
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: 100%;
+  }
+}
+
+.description {
+  &-list {
+    position: relative;
+    width: 42%;
+    height: auto;
+    height: 100vh;
+  }
+
+  &-item {
+    @include pos-center-y;
+
+    opacity: 0;
+
+    &.is-open {
+      opacity: 1;
+
+      .description-title {
+        animation: description-show-up 1.4s;
+      }
+
+      .description-text {
+        animation: description-show-up 2s;
+      }
+
+      .description-text:last-child {
+        animation: description-show-up 2.4s;
+      }
+    }
+  }
+
+  &-card {
+    max-width: 53rem;
+  }
+
+  &-title {
+    @include text-style(32, $white, bold);
+
+    margin-bottom: 4rem;
+  }
+
+  &-textbox {
+    @include text-style(16, $gray80);
+  }
+
+  &-text:first-child {
+    margin-bottom: 1.2rem;
+    color: $white;
+  }
+}
+
+@keyframes description-show-up {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+
+  30% {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+}
