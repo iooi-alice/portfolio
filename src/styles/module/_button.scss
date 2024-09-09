@@ -1,0 +1,38 @@
+.splitting .word {
+  display: block;
+}
+
+.splitting .char {
+  position: relative;
+
+  overflow: hidden;
+  display: inline-block;
+
+  line-height: 1;
+  color: transparent;
+}
+
+.splitting .word .char::before,
+.splitting .word .char::after {
+  color: $white;
+
+  visibility: visible;
+  opacity: 0.6;
+
+  transition: transform 0.6s;
+  transition-delay: calc(40ms * var(--char-index));
+}
+
+.splitting .char::before {
+  transform: translateY(100%);
+}
+
+.splitting:hover .char::before {
+  transform: translateY(0%);
+  color: $white;
+  opacity: 1;
+}
+
+.splitting:hover .char::after {
+  transform: translateY(-100%);
+}
