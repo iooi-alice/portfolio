@@ -1,37 +1,41 @@
-@mixin responsive($screen) {
-  @if $screen == 'T' {
-    @media screen and (max-width: $tablet-breakpoint) {
-      @content;
-    }
-  }
+/* stylelint-disable scss/no-global-function-names */
+$breakpoints-map: (
+  desktop: 1440px,
+  laptop: 1024px,
+  tablet: 768px,
+  mobile: 480px,
+);
 
-  @if $screen == 'M' {
-    @media screen and (max-width: $mobile-breakpoint) {
+@mixin responsive($screen) {
+  $size: map-get($breakpoints-map, $screen);
+
+  @if $size {
+    @media screen and (max-width: $size) {
       @content;
     }
   }
 }
 
 .lg-only {
-  @media screen and (max-width: $tablet-breakpoint) {
+  @media screen and (max-width: $breakpoint-md) {
     display: none !important;
   }
 }
 
 .lg-hidden {
-  @media screen and (min-width: ($tablet-breakpoint + 1)) {
+  @media screen and (min-width: ($breakpoint-md + 1)) {
     display: none !important;
   }
 }
 
 .sm-only {
-  @media screen and (min-width: ($mobile-breakpoint + 1)) {
+  @media screen and (min-width: ($breakpoint-sm + 1)) {
     display: none !important;
   }
 }
 
 .sm-hidden {
-  @media screen and (max-width: $mobile-breakpoint) {
+  @media screen and (max-width: $breakpoint-sm) {
     display: none !important;
   }
 }
