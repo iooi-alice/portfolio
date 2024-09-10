@@ -1,0 +1,194 @@
+.section-projects {
+  overflow-x: hidden;
+  width: 100%;
+
+  .projects-titlebox {
+    @include text-style(160, $white, bold);
+
+    width: 100%;
+    height: 100vh;
+    padding-top: 30vh;
+    text-align: center;
+  }
+
+  .projects-list {
+    @include flexbox(between);
+
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 5.6rem;
+  }
+
+  .projects-item {
+    width: calc(50% - 1.6rem);
+    margin-top: 20rem;
+  }
+
+  .projects-item:nth-child(2n) {
+    margin-top: 0;
+  }
+
+  .project-card {
+    display: block;
+
+    &-imgbox {
+      position: relative;
+
+      overflow: hidden;
+
+      width: 100%;
+      height: 56rem;
+
+      border-radius: 5.6rem;
+
+      &::before {
+        @include pos-center;
+
+        content: '';
+
+        z-index: 2;
+        transform: translate(-50%, -50%) rotate(45deg);
+
+        width: 16rem;
+        height: 16rem;
+
+        opacity: 0;
+        background: url('/images/arrow-up.png') no-repeat center/3.5rem;
+        border: 0.1rem solid $white;
+        border-radius: 50%;
+
+        transition: all 0.3s;
+      }
+
+      &::after {
+        @include pos-center;
+
+        content: '';
+
+        z-index: 1;
+        transform: translate(-50%, -50%) rotate(45deg);
+
+        width: 0;
+        height: 0;
+
+        background: $black url('/images/project-spin.png') no-repeat
+          center/15rem;
+        border-radius: 50%;
+
+        transition: all ease-in-out 0.4s;
+        animation: spin 10s infinite linear;
+      }
+
+      .imgbox-image {
+        @include image-fit;
+
+        transition: $base-transition;
+      }
+
+      .tech-list {
+        @include flexbox(start, $gap: 0.8rem);
+
+        position: absolute;
+        bottom: 3.2rem;
+        left: 4rem;
+
+        &-item {
+          opacity: 0;
+        }
+
+        .tag {
+          @include inline-flexbox;
+          @include text-style(16, $white, bold);
+
+          height: 4rem;
+          padding: 0 1.6rem;
+
+          background-color: $opacity-black-20;
+          backdrop-filter: blur(20px);
+          border: 0.1rem solid $opacity-white-60;
+          border-radius: 2rem;
+        }
+      }
+    }
+
+    &-textbox {
+      padding: 0 2.4rem;
+
+      .title {
+        @include text-style(24, $white, bold);
+
+        margin: 2.4rem 0 0.8rem;
+      }
+
+      .info {
+        @include flexbox(between, start);
+        @include text-style(16, $gray10);
+
+        &-description {
+          width: 80%;
+        }
+      }
+    }
+
+    &:hover {
+      .project-card-imgbox::before {
+        opacity: 1;
+      }
+
+      .project-card-imgbox::after {
+        width: 16rem;
+        height: 16rem;
+      }
+
+      .imgbox-image {
+        filter: brightness(50%);
+      }
+
+      .tech-list-item {
+        animation: fade-up 0.4s ease-in-out forwards;
+
+        &:nth-child(2) {
+          animation-duration: 0.5s;
+          animation-delay: 0.1s;
+        }
+
+        &:nth-child(3) {
+          animation-duration: 0.6s;
+          animation-delay: 0.2s;
+        }
+
+        &:nth-child(4) {
+          animation-duration: 0.7s;
+          animation-delay: 0.3s;
+        }
+      }
+    }
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes fade-up {
+  0% {
+    transform: translateY(1.8rem);
+    opacity: 0;
+  }
+
+  20% {
+    transform: translateY(1.8rem);
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
