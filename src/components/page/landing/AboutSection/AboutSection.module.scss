@@ -127,7 +127,7 @@
   &-title {
     @include text-style(32, $white, bold);
 
-    margin-bottom: 4rem;
+    margin-bottom: 4.8rem;
   }
 
   &-textbox {
@@ -135,7 +135,7 @@
   }
 
   &-text:first-child {
-    margin-bottom: 1.2rem;
+    margin-bottom: 2.4rem;
     color: $white;
   }
 }
