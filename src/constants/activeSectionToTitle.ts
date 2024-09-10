@@ -3,5 +3,5 @@ export const ACTIVE_SECTION_TO_TITLE = {
   'section-about': '✅ What I Do',
   'section-works': '💻 My Works',
   'section-projects': '📁 My Projects',
-  'section-skill': '🛠️ My Skill',
+  'section-readme': '📝 Readme.md',
 }
