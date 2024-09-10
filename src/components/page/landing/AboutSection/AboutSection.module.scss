@@ -1,15 +1,29 @@
 .section-about {
-  @include flexbox;
+  @include flexbox(start);
 
   position: relative;
   overflow: hidden;
   width: 100%;
   height: 100vh;
 
+  @include responsive(tablet) {
+    @include column-flexbox(start);
+
+    height: auto;
+  }
+
   .expertise-list {
     display: inline-block;
     width: 58%;
     text-align: center;
+
+    @include responsive(desktop) {
+      width: 50%;
+    }
+
+    @include responsive(tablet) {
+      width: 100vw;
+    }
   }
 
   .expertise-item {
@@ -21,6 +35,18 @@
 
         position: relative;
         line-height: 1.2;
+
+        @include responsive(desktop) {
+          @include text-style(56, $gray40, bold);
+        }
+
+        @include responsive(laptop) {
+          @include text-style(48, $gray40, bold);
+        }
+
+        @include responsive(mobile) {
+          @include text-style(32, $gray40, bold);
+        }
       }
 
       &-text::before {
@@ -92,19 +118,27 @@
 
 .description {
   &-list {
-    position: relative;
+    @include column-flexbox;
+
     width: 42%;
-    height: auto;
     height: 100vh;
+
+    @include responsive(desktop) {
+      width: 50%;
+    }
+
+    @include responsive(tablet) {
+      width: 100%;
+      height: 100%;
+      padding-top: 5rem;
+    }
   }
 
   &-item {
-    @include pos-center-y;
-
-    opacity: 0;
+    display: none;
 
     &.is-open {
-      opacity: 1;
+      display: block;
 
       .description-title {
         animation: description-show-up 1.4s;
@@ -121,17 +155,40 @@
   }
 
   &-card {
-    max-width: 53rem;
+    width: 53rem;
+
+    @include responsive(laptop) {
+      width: 36vw;
+    }
+
+    @include responsive(tablet) {
+      width: 70vw;
+    }
+
+    @include responsive(mobile) {
+      width: 80vw;
+      text-align: center;
+    }
   }
 
   &-title {
     @include text-style(32, $white, bold);
 
     margin-bottom: 4.8rem;
+
+    @include responsive(laptop) {
+      @include text-style(24, $white, bold);
+
+      margin-bottom: 3.2rem;
+    }
   }
 
   &-textbox {
     @include text-style(16, $gray80);
+
+    @include responsive(laptop) {
+      @include text-style(14, $gray80);
+    }
   }
 
   &-text:first-child {
