@@ -47,29 +47,31 @@ const Header = ({ title }: HeaderProps) => {
   }, [])
 
   return (
-    <header ref={headerRef} className={cx('header')}>
-      <nav className={cx('header-nav')}>
-        <h1 className={cx('nav-logo')}>
-          <Link href={'/'}>
-            <Image src={logo.url} alt={logo.alt} width={80} height={16} />
-          </Link>
-        </h1>
-        <div className={cx('nav-indicator')}>
-          <span className={cx('emoji')}>{emoji}</span>
-          <span className={cx('text')}>{titleText}</span>
-        </div>
-        <span></span>
-      </nav>
-      <button
-        className={cx('btn-contact', 'btn-splitting')}
-        type='button'
-        aria-label='Contact Button'
-      >
-        <span className={cx('btn-contact-text')} data-splitting>
-          Let&#39;s Talk
-        </span>
-      </button>
-    </header>
+    <div className={cx('header-wrapper')}>
+      <header ref={headerRef} className={cx('header')}>
+        <nav className={cx('header-nav')}>
+          <h1 className={cx('nav-logo')}>
+            <Link href={'/'}>
+              <Image src={logo.url} alt={logo.alt} width={80} height={16} />
+            </Link>
+          </h1>
+          <div className={cx('nav-indicator')}>
+            <span className={cx('emoji')}>{emoji}</span>
+            <span className={cx('text')}>{titleText}</span>
+          </div>
+          <span></span>
+        </nav>
+        <a
+          href='mailto:kheesoo10@gmail.com?Subject=Hi%20Soo'
+          className={cx('btn-contact', 'btn-splitting')}
+          aria-label='Contact Button'
+        >
+          <span className={cx('btn-contact-text')} data-splitting>
+            Let&#39;s Talk
+          </span>
+        </a>
+      </header>
+    </div>
   )
 }
 

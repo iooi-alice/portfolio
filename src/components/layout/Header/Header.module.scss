@@ -1,16 +1,34 @@
-.header {
-  @include flexbox(between);
+.header-wrapper {
+  @include flexbox;
 
   position: fixed;
   z-index: $header-level;
-  top: 3.2rem;
-  left: 50%;
-  transform-origin: center center;
-  transform: translateX(-50%);
+  top: 0;
+  right: 0;
+  left: 0;
+
+  width: 100%;
+  height: auto;
+
+  @include responsive(laptop) {
+    padding: 0 3rem;
+  }
+
+  @include responsive(tablet) {
+    padding: 0 1.6rem;
+  }
+}
+
+.header {
+  @include flexbox(between);
+
+  position: relative;
+  z-index: $after-content-level;
 
   overflow: hidden;
 
   width: 80rem;
+  margin-top: 3.2rem;
   padding: 1.2rem;
 
   background: $header-opacity-background;
@@ -18,6 +36,10 @@
 
   transition: $base-transition;
   animation: header-slide-down 1s;
+
+  @include responsive(laptop) {
+    width: 100%;
+  }
 
   &::before {
     content: '';
@@ -39,21 +61,32 @@
 
     .nav-logo {
       padding-left: 4rem;
+
+      @include responsive(tablet) {
+        padding-left: 1.6rem;
+      }
     }
 
     .nav-indicator {
       @include text-style(18, $white, bold);
 
+      animation: jump-indicator 1s infinite;
+
+      @include responsive(tablet) {
+        display: none;
+      }
+
       .emoji {
         display: inline-block;
         margin-right: 0.8rem;
-        animation: emoji 1s infinite;
       }
     }
   }
 }
 
 .btn-contact {
+  @include inline-flexbox;
+
   position: relative;
 
   overflow: hidden;
@@ -75,10 +108,12 @@
     @include text-style(16, $white, bold);
   }
 
-  @include inline-flexbox;
+  @include responsive(tablet) {
+    border-color: $white;
+  }
 }
 
-@keyframes emoji {
+@keyframes jump-indicator {
   0%,
   100% {
     transform: translateY(0);
@@ -95,7 +130,7 @@
   }
 
   30% {
-    transform: translate3d(-50%, -100%, 0);
+    transform: translate3d(0, -100%, 0);
     opacity: 0;
   }
 }
