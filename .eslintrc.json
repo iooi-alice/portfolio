@@ -43,9 +43,10 @@
           { "pattern": "next/**", "group": "external", "position": "before" },
           { "pattern": "react", "group": "external", "position": "before" },
           { "pattern": "react/**", "group": "external", "position": "before" },
+          { "pattern": "@/constants/**", "group": "unknown" },
+          { "pattern": "@/utils/**", "group": "unknown" },
           { "pattern": "@/hooks/**", "group": "unknown" },
           { "pattern": "@/components/**", "group": "unknown" },
-          { "pattern": "@/constants/**", "group": "unknown" },
           { "pattern": "@/pages/**", "group": "unknown" },
           { "pattern": "./**", "group": "index" }
         ],
