@@ -5,6 +5,50 @@
   width: 100%;
   height: 100vh;
 
+  @include responsive(desktop) {
+    @include text-style(80);
+  }
+
+  @include responsive(tablet) {
+    @include text-style(56);
+  }
+
+  @include responsive(mobile) {
+    @include text-style(48);
+
+    font-size: 4rem;
+  }
+
+  .intro-wrapper {
+    @include flexbox;
+
+    width: 100%;
+    height: calc(100vh - 11.2rem - 5.4rem);
+    margin-top: 11.2rem;
+  }
+
+  .intro-inner {
+    @include column-flexbox(between);
+
+    width: 100%;
+    height: 100%;
+    padding: 5rem 5.6rem;
+
+    @include responsive(laptop) {
+      height: 70vh;
+      padding: 0 3rem;
+    }
+
+    @include responsive(tablet) {
+      height: 56vh;
+      padding: 0 1.6rem;
+    }
+
+    @include responsive(mobile) {
+      height: 46vh;
+    }
+  }
+
   .intro-left-greeting,
   .intro-left-designer,
   .intro-left-developer,
@@ -15,14 +59,33 @@
   }
 
   .intro-left {
-    position: absolute;
-    top: 20rem;
-    left: 5.6rem;
+    width: 100%;
 
     .pacman {
       position: relative;
       bottom: -0.3rem;
       margin-left: 0.6rem;
+
+      @include responsive(desktop) {
+        bottom: -0.6rem;
+      }
+
+      @include responsive(tablet) {
+        bottom: -0.4rem;
+        margin-left: 0.2rem;
+
+        img {
+          width: 3.8rem;
+          height: 3.8rem;
+        }
+      }
+
+      @include responsive(mobile) {
+        img {
+          width: 3rem;
+          height: 3rem;
+        }
+      }
     }
 
     &-designer span:last-child {
@@ -41,13 +104,22 @@
 
         background-color: $white;
       }
+
+      @include responsive(tablet) {
+        margin-left: 2.8rem;
+
+        &::before {
+          bottom: 1rem;
+          left: -2.4rem;
+          width: 2rem;
+          height: 0.4rem;
+        }
+      }
     }
   }
 
   .intro-right {
-    position: absolute;
-    right: 5.6rem;
-    bottom: 9.6rem;
+    width: 100%;
     text-align: end;
 
     &-ux {
@@ -67,12 +139,27 @@
 
           background-color: $white;
         }
+
+        @include responsive(tablet) {
+          margin-left: 2.8rem;
+
+          &::before {
+            bottom: 1rem;
+            left: -2.4rem;
+            width: 2rem;
+            height: 0.4rem;
+          }
+        }
       }
     }
 
     &-ds {
       .plus {
         margin-right: 0.8rem;
+
+        @include responsive(mobile) {
+          margin-right: 0.2rem;
+        }
       }
     }
   }
@@ -124,17 +211,20 @@
     left: 0;
 
     width: 100%;
+    padding: 0 5.6rem;
 
     @include text-style(14, $gray80);
 
     &-copyright {
-      padding-left: 5.6rem;
       animation: copyright-show-left 1.8s;
     }
 
     &-contact {
-      padding-right: 5.6rem;
       animation: contact-show-right 1.8s;
+    }
+
+    @include responsive(laptop) {
+      padding: 0 3rem;
     }
   }
 }
