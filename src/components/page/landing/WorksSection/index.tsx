@@ -13,14 +13,14 @@ import useScroller from '@/hooks/useScroller'
 import styles from './WorksSection.module.scss'
 
 const cx = classNames.bind(styles)
-const { spin, arrow_up } = IMAGES
+const { work_spin, arrow_up } = IMAGES
 
 interface WorksSectionProps {
   setTitle: Dispatch<SetStateAction<string>>
 }
 
 const WorksSection = ({ setTitle }: WorksSectionProps) => {
-  const trigger = useScroller(cx('is-motion'))
+  const trigger = useScroller(cx('is-motion'), setTitle)
 
   const sectionRef = useRef(null)
   const triggerRef = useRef(null)
@@ -76,8 +76,8 @@ const WorksSection = ({ setTitle }: WorksSectionProps) => {
           <div className={cx('works-cover-arrowbox')}>
             <Image
               className={cx('spin')}
-              src={spin.url}
-              alt={spin.alt}
+              src={work_spin.url}
+              alt={work_spin.alt}
               width={160}
               height={160}
             />
