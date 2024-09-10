@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import { Dispatch, SetStateAction, useEffect } from 'react'
+import { Dispatch, SetStateAction } from 'react'
 
 import classNames from 'classnames/bind'
 
@@ -17,19 +17,10 @@ interface HeroSectionProps {
 }
 
 const HeroSection = ({ setTitle }: HeroSectionProps) => {
-  const trigger = useScroller(cx('is-motion'))
-
-  useEffect(() => {
-    if (
-      trigger.current &&
-      trigger.current.classList.contains(cx('is-motion'))
-    ) {
-      setTitle('Hello')
-    }
-  }, [trigger, setTitle])
+  const trigger = useScroller(cx('is-motion'), setTitle)
 
   return (
-    <section ref={trigger} className={cx('section-main')}>
+    <section ref={trigger} className={cx('section-hero')}>
       <h2 className='visually-hidden'>Portfolio Main View</h2>
       <div className={cx('intro-left')}>
         <div className={cx('intro-left-greeting')}>

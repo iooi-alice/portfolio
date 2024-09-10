@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useEffect, useState } from 'react'
+import { Dispatch, SetStateAction, useState } from 'react'
 
 import classNames from 'classnames/bind'
 
@@ -15,21 +15,12 @@ interface AboutSectionProps {
 }
 
 const AboutSection = ({ setTitle }: AboutSectionProps) => {
-  const trigger = useScroller(cx('is-motion'))
+  const trigger = useScroller(cx('is-motion'), setTitle)
   const [isActive, setIsActive] = useState(0)
 
   const handleClickMenu = (activeId: number) => {
     setIsActive(activeId)
   }
-
-  useEffect(() => {
-    if (
-      trigger.current &&
-      trigger.current.classList.contains(cx('is-motion'))
-    ) {
-      setTitle('What I Do')
-    }
-  }, [trigger, setTitle])
 
   return (
     <section ref={trigger} className={cx('section-about')}>
