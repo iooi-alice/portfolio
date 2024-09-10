@@ -23,7 +23,7 @@ export const PROJECT_LIST = [
     id: 0,
     path: tickytocky_url,
     project_name: 'Ticky Tocky',
-    tech_stack: ['HTML', 'SCSS', 'JavaScript'],
+    tech_stack: ['HTML', 'SCSS', 'JavaScript', 'UI Design'],
     headline: 'The Smartest Way to Manage Projects',
     desc: 'A web-based service designed to facilitate the management and sharing of team project schedules',
     image: ticky_tocky,
