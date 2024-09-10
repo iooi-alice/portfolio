@@ -2,21 +2,35 @@
   @include flexbox(between);
 
   position: fixed;
-  z-index: 10;
+  z-index: $header-level;
   top: 3.2rem;
   left: 50%;
   transform-origin: center center;
   transform: translateX(-50%);
 
+  overflow: hidden;
+
   width: 80rem;
   padding: 1.2rem;
 
-  background: $opacity-black-70;
-  backdrop-filter: blur(30px);
-  border: $header-border;
-  border-radius: 24px;
+  background: $header-opacity-background;
+  border-radius: 2.4rem;
 
+  transition: $base-transition;
   animation: header-slide-down 1s;
+
+  &::before {
+    content: '';
+
+    position: absolute;
+    z-index: $before-content-level;
+    inset: 0.1rem;
+
+    background: $opacity-black-90;
+    background-color: $opacity-black-70;
+    backdrop-filter: blur(30px);
+    border-radius: 2.4rem;
+  }
 
   &-nav {
     @include flexbox(between, center, 1.6rem);
@@ -33,7 +47,7 @@
       .emoji {
         display: inline-block;
         margin-right: 0.8rem;
-        animation: shaking-hand 2s infinite;
+        animation: emoji 1s infinite;
       }
     }
   }
@@ -64,22 +78,14 @@
   @include inline-flexbox;
 }
 
-@keyframes shaking-hand {
+@keyframes emoji {
   0%,
   100% {
-    transform: rotate(0deg);
-  }
-
-  25% {
-    transform: rotate(25deg);
+    transform: translateY(0);
   }
 
   50% {
-    transform: rotate(-15deg);
-  }
-
-  75% {
-    transform: rotate(15deg);
+    transform: translateY(-0.4rem);
   }
 }
 
