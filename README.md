@@ -1,40 +1,58 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Personal Portfolio
 
-## Getting Started
+> IntersectionObserver를 사용해 각 섹션이 뷰포트에 들어올 때 keyframe 애니메이션을 적용합니다.
+<table>
+  <tr>
+    <th>Hero section</th>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://github.com/user-attachments/assets/5fcc3310-a0c0-44be-932c-7fef666e8fb7" alt="hero" width="800" height="auto" />
+    </td>
+  </tr>
+</table>
 
-First, run the development server:
+<table>
+  <tr>
+    <th>About section</th>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://github.com/user-attachments/assets/84a6751a-dcf8-4324-808a-4b472263d8a2" alt="about" width="800" height="auto" />
+    </td>
+  </tr>
+</table>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+> GSAP의 ScrollTrigger를 사용해 가로 스크롤 배너를 구현했습니다.
+<table>
+  <tr>
+    <th>Works Section</th>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://github.com/user-attachments/assets/95b23a68-939c-492a-9e4d-da9d446e665e" alt="works" width="800" height="auto" />
+    </td>
+  </tr>
+</table>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+<table>
+  <tr>
+    <th>Projects Section</th>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://github.com/user-attachments/assets/127f8d34-8b25-4c21-b6eb-86eab271b924" alt="projects" width="800" height="auto" />
+    </td>
+  </tr>
+</table>
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<table>
+  <tr>
+    <th>Readme Section</th>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://github.com/user-attachments/assets/724f252b-0a7b-4125-9d49-2e29ac945ebc" alt="readme.md" width="800" height="auto" />
+    </td>
+  </tr>
+</table>
