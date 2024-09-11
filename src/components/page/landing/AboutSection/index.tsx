@@ -53,7 +53,9 @@ const AboutSection = ({ setTitle }: AboutSectionProps) => {
             <div className={cx('description-card')}>
               <h4 className={cx('description-title')}>{desc.title}</h4>
               <div className={cx('description-textbox')}>
-                <p className={cx('description-text')}>{desc.desc_ko}</p>
+                <p className={cx('description-text')} lang='ko-KR'>
+                  {desc.desc_ko}
+                </p>
                 <p className={cx('description-text', 'sm-hidden')}>
                   {desc.desc_en}
                 </p>
