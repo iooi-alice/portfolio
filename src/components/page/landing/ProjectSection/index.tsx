@@ -30,8 +30,8 @@ const ProjectSection = ({ setTitle }: ProjectSectionProps) => {
       .timeline({
         scrollTrigger: {
           trigger: trigger.current,
-          start: '0% 100%',
-          end: '0% 20%',
+          start: 'top bottom',
+          end: 'top 20%',
           scrub: true,
         },
       })
@@ -52,9 +52,9 @@ const ProjectSection = ({ setTitle }: ProjectSectionProps) => {
       .timeline({
         scrollTrigger: {
           trigger: projectListRef.current,
-          start: '0% 100%',
-          end: '0% 100%',
-          scrub: 1,
+          start: 'top bottom',
+          end: 'top bottom',
+          scrub: true,
         },
       })
       .to(
@@ -86,12 +86,13 @@ const ProjectSection = ({ setTitle }: ProjectSectionProps) => {
       .timeline({
         scrollTrigger: {
           trigger: projectListRef.current,
-          start: '100% 50%',
-          end: '100% 0%',
+          start: 'bottom center',
+          end: 'bottom 20%',
           scrub: 1,
         },
       })
-      .to(title_1_ref.current, { x: '100%', ease: 'none', duration: 5 })
+      .to(titleBoxRef.current, { zIndex: 0 })
+      .to(title_1_ref.current, { x: '100%', ease: 'none', duration: 5 }, '<')
       .to(title_2_ref.current, { x: '-100%', ease: 'none', duration: 5 }, '<')
   }, [])
 
