@@ -40,7 +40,7 @@ export const IMAGES = {
     url: '/images/project-thumbnail-1.png',
     alt: 'project tickytocky thumbnail image',
   },
-  apple_watch: {
+  ohouse: {
     url: '/images/project-thumbnail-2.png',
     alt: 'project apple watch thumbnail image',
   },
