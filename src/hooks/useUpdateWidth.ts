@@ -5,16 +5,15 @@ interface useUpdateWidthProps {
 }
 
 export const useUpdateWidth = ({ setContainerWidth }: useUpdateWidthProps) => {
-  const sectionRef = useRef(null)
+  const listRef = useRef(null)
 
   const handleUpdateWidth = () => {
-    if (sectionRef.current) {
-      const sectionElement = sectionRef.current as HTMLElement
+    if (listRef.current) {
+      const sectionElement = listRef.current as HTMLElement
 
       const sectionWidth = sectionElement.scrollWidth
       const viewportWidth = window.innerWidth
-      const translateAmount =
-        viewportWidth - viewportWidth * 0.55 - sectionWidth
+      const translateAmount = viewportWidth - viewportWidth * 0.5 - sectionWidth
       setContainerWidth(translateAmount)
     }
   }
@@ -28,5 +27,5 @@ export const useUpdateWidth = ({ setContainerWidth }: useUpdateWidthProps) => {
     }
   }, [setContainerWidth])
 
-  return { sectionRef }
+  return { listRef }
 }
