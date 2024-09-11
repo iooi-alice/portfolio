@@ -12,7 +12,8 @@
 }
 
 .section-works {
-  overflow: hidden;
+  width: 100%;
+  height: 200vh;
 
   &-inner {
     @include flexbox(start, start);
@@ -25,19 +26,29 @@
 
     width: 45vw;
     height: 100vh;
-    padding: 12rem 0 0 8rem;
+    padding: 12rem 0 0 5.6rem;
 
     &-intro {
       &-title {
         @include text-style(80);
 
         margin-bottom: 0.8rem;
+
+        @include responsive(desktop) {
+          @include text-style(56);
+        }
       }
 
       &-desc {
         @include text-style(18);
 
         width: 80rem;
+
+        @include responsive(desktop) {
+          @include text-style(16);
+
+          width: 60rem;
+        }
       }
     }
 
@@ -61,15 +72,22 @@
 
         transform: translate(-50%, -50%) rotate(90deg);
       }
+
+      @include responsive(desktop) {
+        margin-top: 30rem;
+      }
     }
   }
 
   .works-list {
     @include flexbox(start, center, $gap: 4rem);
 
-    width: 200vw;
     height: 100vh;
-    margin-top: 10rem;
+    padding-top: 20rem;
+
+    @include responsive(desktop) {
+      padding-top: 25rem;
+    }
   }
 
   .works-item {
@@ -88,6 +106,12 @@
     padding: 4.8rem;
 
     border-radius: 3.6rem;
+
+    @include responsive(desktop) {
+      width: 88rem;
+      height: 45rem;
+      padding: 3.2rem;
+    }
 
     &-inner {
       width: 100%;
@@ -112,6 +136,10 @@
         @include text-style(24, $white, bold);
 
         margin-bottom: 1.6rem;
+
+        @include responsive(desktop) {
+          margin-bottom: 0.8rem;
+        }
       }
     }
 
@@ -119,6 +147,14 @@
       position: absolute;
       right: -0.4rem;
       bottom: 0;
+
+      @include responsive(desktop) {
+        width: 50rem;
+
+        img {
+          @include image-fit;
+        }
+      }
     }
 
     &.work-01 {
