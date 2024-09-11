@@ -73,7 +73,7 @@ const ReadmeSection = ({ setTitle }: SkillSectionProps) => {
           2,505 contributions in the last year
         </h3>
         <div className={cx('graph-overview-box')}>
-          <ul className={cx('calender-list')}>
+          <ul className={cx('calender-list', 'sm-hidden')}>
             {CONTRIBUTION_MONTH.map((month, idx) => (
               <li className={cx('calender-item')} key={`month-key-${idx}`}>
                 <span className={cx('calender-item-label')}>{month}</span>
@@ -93,7 +93,7 @@ const ReadmeSection = ({ setTitle }: SkillSectionProps) => {
               ))}
             </ul>
 
-            <div className={cx('graph-overview')}>
+            <div className={cx('graph-overview', 'lg-only')}>
               {Array.from({ length: TOTAL_BOXES }, (_, idx) => (
                 <div
                   key={`box-key-${idx}`}
