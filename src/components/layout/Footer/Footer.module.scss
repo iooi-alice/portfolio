@@ -3,6 +3,17 @@
   height: 50vh;
   padding: 0 5.6rem;
 
+  @include responsive(laptop) {
+    padding: 0 3rem;
+  }
+
+  @include responsive(tablet) {
+    height: 25vh;
+    margin-top: 5rem;
+    padding: 0 1.6rem;
+    border-top: 0.1rem solid $gray30;
+  }
+
   &-inner {
     @include column-flexbox(center, start);
 
@@ -11,9 +22,29 @@
 
   &-title {
     @include text-style(56);
+
+    @include responsive(laptop) {
+      @include text-style(48);
+    }
+
+    @include responsive(tablet) {
+      @include text-style(20);
+    }
   }
 
   &-mail {
     @include text-style(80);
+
+    @include responsive(laptop) {
+      @include text-style(56);
+    }
+
+    @include responsive(tablet) {
+      @include text-style(32);
+    }
+
+    @include responsive(mobile) {
+      @include text-style(24);
+    }
   }
 }
