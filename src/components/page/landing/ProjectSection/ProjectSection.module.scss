@@ -9,6 +9,14 @@
     height: 100vh;
     padding-top: 30vh;
     text-align: center;
+
+    @include responsive(laptop) {
+      @include text-style(96, $white, bold);
+    }
+
+    @include responsive(tablet) {
+      @include text-style(56, $white, bold);
+    }
   }
 
   .projects-list {
@@ -18,15 +26,32 @@
     width: 100%;
     margin: 0 auto;
     padding: 0 5.6rem;
+
+    @include responsive(laptop) {
+      padding: 0 3rem;
+    }
+
+    @include responsive(tablet) {
+      padding: 0 1.6rem;
+    }
   }
 
   .projects-item {
     width: calc(50% - 1.6rem);
     margin-top: 20rem;
+
+    @include responsive(laptop) {
+      width: 100vw;
+      margin-top: 5.6rem;
+    }
   }
 
   .projects-item:nth-child(2n) {
     margin-top: 0;
+
+    @include responsive(laptop) {
+      margin-top: 5.6rem;
+    }
   }
 
   .project-card {
@@ -41,6 +66,11 @@
       height: 56rem;
 
       border-radius: 5.6rem;
+
+      @include responsive(tablet) {
+        height: 32rem;
+        border-radius: 3.2rem;
+      }
 
       &::before {
         @include pos-center;
