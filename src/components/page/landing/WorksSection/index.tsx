@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-import { Dispatch, SetStateAction, useEffect, useRef } from 'react'
+import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react'
 
 import classNames from 'classnames/bind'
 import { gsap } from 'gsap'
@@ -9,6 +9,7 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import { IMAGES } from '@/constants/images'
 import { WORK_LIST } from '@/constants/workList'
 import useScroller from '@/hooks/useScroller'
+import { useUpdateWidth } from '@/hooks/useUpdateWidth'
 
 import styles from './WorksSection.module.scss'
 
@@ -21,49 +22,45 @@ interface WorksSectionProps {
 
 const WorksSection = ({ setTitle }: WorksSectionProps) => {
   const trigger = useScroller(cx('is-motion'), setTitle)
-
-  const sectionRef = useRef(null)
-  const triggerRef = useRef(null)
+  const workSectionRef = useRef(null)
+  const [containerWidth, setContainerWidth] = useState(0)
 
   gsap.registerPlugin(ScrollTrigger)
 
+  const { listRef } = useUpdateWidth({ setContainerWidth })
+
   useEffect(() => {
-    const pin = gsap.fromTo(
-      sectionRef.current,
-      {
-        translateX: 0,
-      },
-      {
-        translateX: '-110vw',
-        ease: 'none',
-        duration: 1,
-        scrollTrigger: {
-          trigger: triggerRef.current,
-          start: 'center center',
-          end: '200% bottom',
-          scrub: true,
-          pin: true,
-          // markers: true,
+    if (containerWidth && listRef.current) {
+      const pin = gsap.fromTo(
+        listRef.current,
+        {
+          translateX: 0,
         },
-      },
-    )
+        {
+          translateX: containerWidth,
+          ease: 'none',
+          duration: 1,
+          scrollTrigger: {
+            trigger: workSectionRef.current,
+            start: 'center center',
+            end: '100%',
+            scrub: true,
+            pin: true,
+            pinSpacing: false,
+          },
+        },
+      )
 
-    if (
-      trigger.current &&
-      trigger.current.classList.contains(cx('is-motion'))
-    ) {
-      setTitle('My Works')
+      return () => {
+        pin.kill()
+      }
     }
-
-    return () => {
-      pin.kill()
-    }
-  }, [trigger, setTitle])
+  }, [trigger, setTitle, listRef, containerWidth])
 
   return (
     <section ref={trigger} className={cx('section-works')}>
       <h2 className='visually-hidden'>My Works</h2>
-      <div ref={triggerRef} className={cx('section-works-inner')}>
+      <div ref={workSectionRef} className={cx('section-works-inner')}>
         <div className={cx('works-cover')}>
           <div className={cx('works-cover-intro')}>
             <h3 className={cx('works-cover-intro-title')}>WORKS</h3>
@@ -90,7 +87,7 @@ const WorksSection = ({ setTitle }: WorksSectionProps) => {
             />
           </div>
         </div>
-        <ul ref={sectionRef} className={cx('works-list')}>
+        <ul ref={listRef} className={cx('works-list')}>
           {WORK_LIST.map((item) => (
             <li className={cx('works-item')} key={item.id}>
               <div className={cx('work-card', `${item.id}`)}>
