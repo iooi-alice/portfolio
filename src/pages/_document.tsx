@@ -8,6 +8,7 @@ export default function Document() {
       <Head>
         <meta name='description' content={META_DATA.description} />
         <meta name='keywords' content={META_DATA.keywords} />
+        <meta property='og:site_name' content={META_DATA.title} />
         <meta property='og:url' content={META_DATA.siteUrl} />
         <meta property='og:type' content={META_DATA.ogType} />
         <meta property='og:title' content={META_DATA.title} />
