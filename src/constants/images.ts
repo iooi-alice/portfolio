@@ -1,3 +1,5 @@
+export const CLOUDFLARE_URL = process.env.NEXT_PUBLIC_CLOUDFLARE_URL
+
 export const SVGS = {
   logo: {
     url: '/svg/ic-logo.svg',
