@@ -2,16 +2,17 @@ import { IMAGES } from '@/constants/images'
 import { PATH } from '@/constants/path'
 
 const {
+  tickytocky_url,
+  ohou_url,
   ggf_url,
   ggf_library_url,
   mingle_url,
   mingle_library_url,
-  tickytocky_url,
 } = PATH
 
 const {
   ticky_tocky,
-  apple_watch,
+  ohouse,
   ggf_thumbnail,
   ggf_ui_thumbnail,
   mingle,
@@ -23,19 +24,19 @@ export const PROJECT_LIST = [
     id: 0,
     path: tickytocky_url,
     project_name: 'Ticky Tocky',
-    tech_stack: ['HTML', 'SCSS', 'JavaScript', 'UI Design'],
+    tech_stack: ['HTML', 'SCSS', 'JavaScript'],
     headline: 'The Smartest Way to Manage Projects',
     desc: 'A web-based service designed to facilitate the management and sharing of team project schedules',
     image: ticky_tocky,
   },
   {
     id: 1,
-    path: tickytocky_url,
-    project_name: 'Apple Watch',
+    path: ohou_url,
+    project_name: 'ohouse',
     tech_stack: ['HTML', 'SCSS', 'JavaScript'],
-    headline: 'The Smartest Way to Manage Projects',
-    desc: 'A web-based service designed to facilitate the management and sharing of team project schedules',
-    image: apple_watch,
+    headline: 'Clone Coding Project',
+    desc: 'This is a clone coding project of Ohouse, designed to gain experience in implementing website features and UI.',
+    image: ohouse,
   },
   {
     id: 2,
