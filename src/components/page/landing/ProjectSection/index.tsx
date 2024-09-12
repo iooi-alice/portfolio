@@ -122,7 +122,6 @@ const ProjectSection = ({ setTitle }: ProjectSectionProps) => {
                   src={item.image.url}
                   alt={item.image.alt}
                   fill
-                  unoptimized
                 />
                 <ul className={cx('tech-list')}>
                   {item.tech_stack.map((stack, index) => (
