@@ -31,21 +31,21 @@
       position: relative;
 
       &-text {
-        @include text-style(80, $gray40, bold);
+        @include text-style(80, $gray70, bold);
 
         position: relative;
         line-height: 1.2;
 
         @include responsive(desktop) {
-          @include text-style(56, $gray40, bold);
+          @include text-style(56, $gray70, bold);
         }
 
         @include responsive(laptop) {
-          @include text-style(48, $gray40, bold);
+          @include text-style(48, $gray70, bold);
         }
 
         @include responsive(mobile) {
-          @include text-style(32, $gray40, bold);
+          @include text-style(32, $gray70, bold);
         }
       }
 
