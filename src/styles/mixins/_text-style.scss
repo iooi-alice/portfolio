@@ -125,10 +125,6 @@
     color: $color;
   }
 
-  @if $weight == 'light' {
-    font-weight: 400;
-  }
-
   @if $weight == 'bold' {
     font-weight: 600;
   }
