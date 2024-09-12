@@ -40,7 +40,7 @@
       }
 
       &-desc {
-        @include text-style(18);
+        @include text-style(18, $gray80);
 
         width: 80rem;
 
