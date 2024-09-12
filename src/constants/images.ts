@@ -36,28 +36,28 @@ export const IMAGES = {
     url: '/images/arrow-up.png',
     alt: 'arrow up image',
   },
-  ticky_tocky: {
-    url: '/images/project-thumbnail-1.png',
+  tickytocky_thumbnail: {
+    url: `${CLOUDFLARE_URL}/03226953-f9ab-4f3e-7535-beb6e54cc200/width=1760,height=1100`,
     alt: 'project tickytocky thumbnail image',
   },
-  ohouse: {
-    url: '/images/project-thumbnail-2.png',
+  ohouse_thumbnail: {
+    url: `${CLOUDFLARE_URL}/1c52bd00-a88b-4889-5564-ccd5f024ab00/width=1760,height=1100`,
     alt: 'project apple watch thumbnail image',
   },
   ggf_thumbnail: {
-    url: '/images/project-thumbnail-3.png',
+    url: `${CLOUDFLARE_URL}/0e9aa7ff-31e3-4903-3bd4-90bfa12be700/width=1760,height=1100`,
     alt: 'project ggf thumbnail image',
   },
   ggf_ui_thumbnail: {
-    url: '/images/project-thumbnail-4.png',
+    url: `${CLOUDFLARE_URL}/f92d597c-69d7-4241-7c80-e52585829d00/width=1760,height=1100`,
     alt: 'project ggf-ui thumbnail image',
   },
-  mingle: {
-    url: '/images/project-thumbnail-5.png',
+  mingle_thumbnail: {
+    url: `${CLOUDFLARE_URL}/5455ec1b-50cb-48c3-bb42-21c031683300/width=1760,height=1100`,
     alt: 'project mingle thumbnail image',
   },
-  mingle_ui: {
-    url: '/images/project-thumbnail-6.png',
+  mingle_ui_thumbnail: {
+    url: `${CLOUDFLARE_URL}/15648c48-b58b-4ca4-9918-8002e1911100/width=1760,height=1100`,
     alt: 'project mingle-ui thumbnail image',
   },
 }

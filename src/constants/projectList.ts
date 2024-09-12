@@ -11,12 +11,12 @@ const {
 } = PATH
 
 const {
-  ticky_tocky,
-  ohouse,
+  tickytocky_thumbnail,
+  ohouse_thumbnail,
   ggf_thumbnail,
   ggf_ui_thumbnail,
-  mingle,
-  mingle_ui,
+  mingle_thumbnail,
+  mingle_ui_thumbnail,
 } = IMAGES
 
 export const PROJECT_LIST = [
@@ -27,7 +27,7 @@ export const PROJECT_LIST = [
     tech_stack: ['HTML', 'SCSS', 'JavaScript'],
     headline: 'The Smartest Way to Manage Projects',
     desc: 'A web-based service designed to facilitate the management and sharing of team project schedules',
-    image: ticky_tocky,
+    image: tickytocky_thumbnail,
   },
   {
     id: 1,
@@ -36,7 +36,7 @@ export const PROJECT_LIST = [
     tech_stack: ['HTML', 'SCSS', 'JavaScript'],
     headline: 'Clone Coding Project',
     desc: 'This is a clone coding project of Ohouse, designed to gain experience in implementing website features and UI.',
-    image: ohouse,
+    image: ohouse_thumbnail,
   },
   {
     id: 2,
@@ -63,7 +63,7 @@ export const PROJECT_LIST = [
     tech_stack: ['React', 'TypeScript', 'Tailwind'],
     headline: 'Make Every Moment Memorable',
     desc: 'Take control with our user-friendly dashboard, allowing you to organize and personalize your rolling papers, ensuring each message stands out',
-    image: mingle,
+    image: mingle_thumbnail,
   },
   {
     id: 5,
@@ -72,6 +72,6 @@ export const PROJECT_LIST = [
     tech_stack: ['React', 'TypeScript', 'Tailwind', 'Storybook'],
     headline: 'Mingle UI Library',
     desc: 'Mingle-UI is a comprehensive design system built with Tailwind CSS and Storybook, consistently used across the Mingle service',
-    image: mingle_ui,
+    image: mingle_ui_thumbnail,
   },
 ]
