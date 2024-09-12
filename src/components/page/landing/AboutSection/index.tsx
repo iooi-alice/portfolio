@@ -51,7 +51,7 @@ const AboutSection = ({ setTitle }: AboutSectionProps) => {
             key={`desc-key-${desc.id}`}
           >
             <div className={cx('description-card')}>
-              <h4 className={cx('description-title')}>{desc.title}</h4>
+              <h3 className={cx('description-title')}>{desc.title}</h3>
               <div className={cx('description-textbox')}>
                 <p className={cx('description-text')} lang='ko-KR'>
                   {desc.desc_ko}
