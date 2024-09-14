@@ -5,6 +5,7 @@ import { Dispatch, SetStateAction, useEffect, useRef } from 'react'
 
 import classNames from 'classnames/bind'
 import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 
 import { PROJECT_LIST } from '@/constants/projectList'
 import useScroller from '@/hooks/useScroller'
@@ -18,8 +19,9 @@ interface ProjectSectionProps {
 }
 
 const ProjectSection = ({ setTitle }: ProjectSectionProps) => {
-  const trigger = useScroller(cx('is-motion'), setTitle)
+  gsap.registerPlugin(ScrollTrigger)
 
+  const trigger = useScroller(cx('is-motion'), setTitle)
   const titleBoxRef = useRef(null)
   const title_1_ref = useRef(null)
   const title_2_ref = useRef(null)
