@@ -52,7 +52,6 @@ export default function Document() {
         <meta name='theme-color' content='#ffffff' />
         <meta name='robots' content='index, follow' />
         <link rel='canonical' href='https://soo-portfolio.vercel.app/'></link>
-        <title>{META_DATA.title}</title>
       </Head>
       <body>
         <Main />
