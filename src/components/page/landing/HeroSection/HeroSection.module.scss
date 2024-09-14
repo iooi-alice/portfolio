@@ -56,6 +56,10 @@
   .intro-right-ds {
     overflow: hidden;
     width: auto;
+
+    p {
+      opacity: 0;
+    }
   }
 
   .intro-left {
@@ -169,35 +173,35 @@
     .intro-left-greeting {
       p {
         transform: translate3d(0, 0, 0);
-        animation: intro-slide-up 1.4s;
+        animation: intro-slide-up 1.4s forwards;
       }
     }
 
     .intro-left-designer {
       p {
         transform: translate3d(0, 0, 0);
-        animation: intro-slide-up 1.8s;
+        animation: intro-slide-up 1.8s forwards;
       }
     }
 
     .intro-left-developer {
       p {
         transform: translate3d(0, 0, 0);
-        animation: intro-slide-up 2.2s;
+        animation: intro-slide-up 2.2s forwards;
       }
     }
 
     .intro-right-ux {
       p {
         transform: translate3d(0, 0, 0);
-        animation: intro-slide-up 2.2s;
+        animation: intro-slide-up 2.2s forwards;
       }
     }
 
     .intro-right-ds {
       p {
         transform: translate3d(0, 0, 0);
-        animation: intro-slide-up 2.4s;
+        animation: intro-slide-up 2.4s forwards;
       }
     }
   }
@@ -238,6 +242,11 @@
     transform-origin: top left;
     transform: translate3d(0, 100%, 0);
     opacity: 0;
+  }
+
+  100% {
+    visibility: visible;
+    opacity: 1;
   }
 }
 
