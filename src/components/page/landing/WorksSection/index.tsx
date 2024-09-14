@@ -21,12 +21,11 @@ interface WorksSectionProps {
 }
 
 const WorksSection = ({ setTitle }: WorksSectionProps) => {
+  gsap.registerPlugin(ScrollTrigger)
+
   const trigger = useScroller(cx('is-motion'), setTitle)
   const workSectionRef = useRef(null)
   const [containerWidth, setContainerWidth] = useState(0)
-
-  gsap.registerPlugin(ScrollTrigger)
-
   const { listRef } = useUpdateWidth({ setContainerWidth })
 
   useEffect(() => {
