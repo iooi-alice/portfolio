@@ -49,7 +49,6 @@
     inset: 0.1rem;
 
     background: $opacity-black-90;
-    background-color: $opacity-black-70;
     backdrop-filter: blur(30px);
     border-radius: 2.4rem;
   }
@@ -84,6 +83,33 @@
   }
 }
 
+@keyframes header-slide-down {
+  0% {
+    opacity: 0;
+  }
+
+  30% {
+    transform: translate3d(0, -100%, 0);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+
+@keyframes jump-indicator {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-0.4rem);
+  }
+}
+
 .btn-contact {
   @include inline-flexbox;
 
@@ -110,27 +136,5 @@
 
   @include responsive(tablet) {
     border-color: $white;
-  }
-}
-
-@keyframes jump-indicator {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-0.4rem);
-  }
-}
-
-@keyframes header-slide-down {
-  0% {
-    opacity: 0;
-  }
-
-  30% {
-    transform: translate3d(0, -100%, 0);
-    opacity: 0;
   }
 }
