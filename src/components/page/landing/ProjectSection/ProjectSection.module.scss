@@ -97,11 +97,13 @@
         content: '';
 
         z-index: 1;
-        transform: translate(-50%, -50%) rotate(45deg);
+        transform-origin: center;
+        transform: translate(-50%, -50%);
 
         width: 0;
         height: 0;
 
+        opacity: 0;
         background: $black url('/images/project-spin.png') no-repeat
           center/15rem;
         border-radius: 50%;
@@ -169,6 +171,7 @@
       .project-card-imgbox::after {
         width: 16rem;
         height: 16rem;
+        opacity: 1;
       }
 
       .imgbox-image {
