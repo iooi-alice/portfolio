@@ -26,23 +26,31 @@ const Header = ({ title }: HeaderProps) => {
   const [emoji, ...titleTextParts] = title.split(/(?<=^\S+)\s/)
   const titleText = titleTextParts.join(' ')
 
+  const initializeSplitting = () => {
+    import('splitting').then((Splitting) => {
+      Splitting.default()
+    })
+  }
+
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      import('splitting').then((Splitting) => {
-        Splitting.default()
-      })
+      initializeSplitting()
 
-      const maxHeight =
+      const currentHeight =
         document.documentElement.scrollHeight - window.innerHeight
 
-      window.addEventListener('scroll', () => {
-        const scrollRatio = window.scrollY / maxHeight
+      const scrollEventHandler = () => {
+        const scrollRatio = window.scrollY / currentHeight
         const angle = scrollRatio * 360
 
         if (headerRef.current) {
-          headerRef.current.style.background = `conic-gradient(from 0deg, #ffffff86 0%, #ffffff86 ${angle}deg, #5252524d ${angle}deg)`
+          headerRef.current.style.background = `conic-gradient(from 0deg, #00ffb3 0%, #33d3ff ${angle}deg, #5252524d ${angle}deg)`
         }
-      })
+      }
+
+      window.addEventListener('scroll', scrollEventHandler)
+
+      return () => window.removeEventListener('scroll', scrollEventHandler)
     }
   }, [])
 
